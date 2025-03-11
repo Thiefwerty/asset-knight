@@ -1,0 +1,375 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1q1h6nd7dtvu"]
+
+[ext_resource type="PackedScene" uid="uid://b63pycb7gcbjw" path="res://weapon_base.tscn" id="1_74bdg"]
+[ext_resource type="Script" uid="uid://de5f7w8w3kng3" path="res://scripts/sword.gd" id="2_e4ynd"]
+[ext_resource type="Texture2D" uid="uid://ck0pqu4rrs4a4" path="res://brackeys_platformer_assets/sprites/items/outline original.png" id="3_r76a6"]
+[ext_resource type="Texture2D" uid="uid://crtw1yucnxsn5" path="res://brackeys_platformer_assets/sprites/FX/sword_slash.png" id="4_dwvek"]
+[ext_resource type="PackedScene" uid="uid://b4imr3x2wxlp2" path="res://weapon_kill_zone.tscn" id="5_rx5id"]
+
+[sub_resource type="Animation" id="Animation_dwvek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FXSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FXSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FXSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FXSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523599]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../FXSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.53553, 0.707106)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WeaponKillZone/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.76837e-07, 0.353554)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../WeaponKillZone/CollisionShape2D:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rx5id"]
+resource_name = "attack_left"
+length = 0.233337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0334239, 0.0668674, 0.100192, 0.133391, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 6), Vector2(0, -1.414), Vector2(0, -1.414), Vector2(0, -1.414), Vector2(0, -1.414), Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0336423, 0.0668674, 0.100192, 0.133391, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.23569, -0.53058, -1.59174, -2.12232, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FXSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0341048, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FXSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033946, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FXSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FXSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../FXSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-3.53553, 0.707106), Vector2(2.38419e-07, -2.82843), Vector2(-3.53553, 0.707106)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WeaponKillZone/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0167816, 0.0341202, 0.0508625, 0.0670735, 0.0843657, 0.100614, 0.11577, 0.133597, 0.150337, 0.167191, 0.184407, 0.20069, 0.217455, 0.233337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.96046e-08, -1.41421), Vector2(3.53553, -3.53553), Vector2(6.36396, -3.53553), Vector2(2.12132, -7.77817), Vector2(-2.82843, -7.07107), Vector2(-5.65685, -4.24264), Vector2(-7.07107, -1.41421), Vector2(-6.36396, 0.707106), Vector2(-5.65685, 1.41421), Vector2(-7.07107, 1.41421), Vector2(-7.07107, 7.15256e-07), Vector2(-5.65685, -1.41421), Vector2(-4.24264, -1.41421), Vector2(-2.06392, -1.41421), Vector2(2.38419e-07, -1.41421)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../WeaponKillZone/CollisionShape2D:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.0167672, 0.0340754, 0.0508426, 0.067069, 0.0843771, 0.100603, 0.115748, 0.133597, 0.150364, 0.167132, 0.18444, 0.200666, 0.217433, 0.233337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.60912, 1.23918, 0.340339, -0.53058, -1.07861, -1.59174, -1.83609, -2.12232, -1.76802, -1.41372, -1.04371, -0.698132, -0.335103, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e4ynd"]
+resource_name = "attack_right"
+length = 0.233337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0334239, 0.0668674, 0.100192, 0.133391, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 6), Vector2(0, 1.41421), Vector2(0, 1.41421), Vector2(0, 1.41421), Vector2(0, 1.41421), Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0336423, 0.0668674, 0.100192, 0.133391, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.23569, 0.53058, 1.59174, 2.12232, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FXSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0341048, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FXSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033946, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FXSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FXSprite:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.785398]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../WeaponKillZone/CollisionShape2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.0167672, 0.0340754, 0.0508426, 0.067069, 0.0843771, 0.100603, 0.115748, 0.133597, 0.150364, 0.167132, 0.18444, 0.200666, 0.217433, 0.233337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.96046e-08, -1.41421), Vector2(-3.53553, -2.12132), Vector2(-6.36396, -0.707108), Vector2(-2.12132, -4.94975), Vector2(3.53553, -4.94975), Vector2(5.65686, -1.41421), Vector2(6.36396, 2.12132), Vector2(6.36396, 3.53554), Vector2(5.65685, 5.65686), Vector2(6.36396, 3.53554), Vector2(6.36396, 2.12132), Vector2(5.65685, 1.07288e-06), Vector2(3.53553, -0.707106), Vector2(1.72105, -1.07), Vector2(2.38419e-07, -1.41421)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WeaponKillZone/CollisionShape2D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0167672, 0.0340754, 0.0508426, 0.067069, 0.0843771, 0.100603, 0.115748, 0.133597, 0.150364, 0.167132, 0.18444, 0.200666, 0.217433, 0.233337),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.609757, -1.23918, -0.339795, 0.53058, 1.07828, 1.59174, 1.83529, 2.12232, 1.76802, 1.41372, 1.04438, 0.698132, 0.334466, -0.010472]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwvek"]
+_data = {
+&"RESET": SubResource("Animation_dwvek"),
+&"attack_left": SubResource("Animation_rx5id"),
+&"attack_right": SubResource("Animation_e4ynd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4ynp"]
+size = Vector2(7.07107, 18.7383)
+
+[node name="Sword" instance=ExtResource("1_74bdg")]
+position = Vector2(8, 2)
+rotation = 0.785398
+script = ExtResource("2_e4ynd")
+damage = null
+attack_speed = null
+
+[node name="WeaponSprite" parent="." index="0"]
+position = Vector2(0, 6)
+texture = ExtResource("3_r76a6")
+offset = Vector2(-0.0220056, -5.43563)
+region_enabled = true
+region_rect = Rect2(4, 4, 7, 16)
+
+[node name="FXSprite" parent="." index="1"]
+visible = false
+position = Vector2(-3.53553, 0.707106)
+rotation = -0.523599
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_dwvek")
+flip_h = true
+hframes = 9
+region_rect = Rect2(0, 0, 576, 64)
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_dwvek")
+}
+
+[node name="WeaponKillZone" parent="." index="3" instance=ExtResource("5_rx5id")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponKillZone" index="0"]
+position = Vector2(4.76837e-07, 0.353554)
+shape = SubResource("RectangleShape2D_v4ynp")

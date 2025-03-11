@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxn470g05eijt"]
+
+[ext_resource type="Script" uid="uid://cy4nwmgrc63uk" path="res://scripts/enemy.gd" id="1_7k104"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_7k104")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

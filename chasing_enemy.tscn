@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51lp51shqyt3"]
+
+[ext_resource type="PackedScene" uid="uid://cxn470g05eijt" path="res://enemy.tscn" id="1_em2wj"]
+[ext_resource type="Script" uid="uid://bbrtxabqx1gr" path="res://scripts/chasing_enemy.gd" id="2_6etkp"]
+[ext_resource type="PackedScene" uid="uid://cujfula813yad" path="res://chase_zone.tscn" id="2_ysx1p"]
+
+[node name="GreenSlime" instance=ExtResource("1_em2wj")]
+script = ExtResource("2_6etkp")
+patrol_range = 40.0
+chase_radius = 60.0
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+
+[node name="ChaseZone" parent="." index="3" instance=ExtResource("2_ysx1p")]

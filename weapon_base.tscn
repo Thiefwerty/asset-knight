@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63pycb7gcbjw"]
+
+[ext_resource type="Script" uid="uid://hm6i6tudfecx" path="res://scripts/weapon_base.gd" id="1_i2bdm"]
+
+[node name="WeaponBase" type="Node2D"]
+script = ExtResource("1_i2bdm")
+
+[node name="WeaponSprite" type="Sprite2D" parent="."]
+
+[node name="FXSprite" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../WeaponSprite")
+
+[node name="WeaponCollision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponCollision"]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="WeaponCollision" to="." method="_on_weapon_collision_body_entered"]
+[connection signal="body_exited" from="WeaponCollision" to="." method="_on_weapon_collision_body_exited"]

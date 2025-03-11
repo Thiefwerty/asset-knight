@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://djf5kp2ridf60"]
+
+[ext_resource type="Texture2D" uid="uid://c4ucriktl5wta" path="res://brackeys_platformer_assets/sprites/enviroment/platforms.png" id="1_4pxwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sesu"]
+size = Vector2(3.2, 1.8)
+
+[node name="PlatformGrassShort" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.98023e-07, 2.98023e-08)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_2sesu")
+one_way_collision = true
+debug_color = Color(4.81307e-07, 0.586358, 0.772458, 0.42)
+
+[node name="PlatformGrassShort2" type="Sprite2D" parent="."]
+texture = ExtResource("1_4pxwq")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 9)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6nk0cdrwyi0d"]
+
+[ext_resource type="Texture2D" uid="uid://cjfdnhu46byrf" path="res://brackeys_platformer_assets/sprites/enviroment/country-platform-back.png" id="1_evisy"]
+[ext_resource type="Script" uid="uid://5rpmakd7sna" path="res://scripts/menu_background.gd" id="1_pa4k8"]
+[ext_resource type="Texture2D" uid="uid://cvd0lxlj1t3l8" path="res://brackeys_platformer_assets/sprites/enviroment/country-platform-forest.png" id="2_y1s7n"]
+
+[node name="MenuBackground" type="ParallaxBackground"]
+script = ExtResource("1_pa4k8")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1536, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(485, 14)
+texture = ExtResource("1_evisy")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(435, 59)
+texture = ExtResource("2_y1s7n")

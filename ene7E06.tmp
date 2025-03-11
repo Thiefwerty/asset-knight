@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmmgf5ua64hqp"]
+
+[ext_resource type="Texture2D" uid="uid://bftr0y58ycu6v" path="res://brackeys_platformer_assets/sprites/characters/slime_green.png" id="1_gmqsn"]
+[ext_resource type="Script" path="res://enemy_slime.gd" id="1_xquic"]
+[ext_resource type="PackedScene" uid="uid://dxu0g2qrxulft" path="res://kill_zone.tscn" id="2_6en2x"]
+[ext_resource type="PackedScene" uid="uid://cujfula813yad" path="res://chase_zone.tscn" id="3_idf61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iy2yw"]
+size = Vector2(10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plnec"]
+atlas = ExtResource("1_gmqsn")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifba7"]
+atlas = ExtResource("1_gmqsn")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roj14"]
+atlas = ExtResource("1_gmqsn")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0udj5"]
+atlas = ExtResource("1_gmqsn")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pypjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plnec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifba7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roj14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0udj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n36mf"]
+radius = 33.0151
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ymvk"]
+size = Vector2(14, 12)
+
+[node name="EnemySlime" type="CharacterBody2D"]
+z_index = 4
+script = ExtResource("1_xquic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_iy2yw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pypjs")
+autoplay = "default"
+
+[node name="ChaseZone" parent="." instance=ExtResource("3_idf61")]
+position = Vector2(0, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseZone"]
+shape = SubResource("CircleShape2D_n36mf")
+
+[node name="KillZone" parent="." instance=ExtResource("2_6en2x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_4ymvk")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(8, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-7, 0)

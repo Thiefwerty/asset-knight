@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b63pycb7gcbjw"]
+
+[ext_resource type="PackedScene" uid="uid://b4imr3x2wxlp2" path="res://weapon_kill_zone.tscn" id="2_bx7nf"]
+
+[sub_resource type="GDScript" id="GDScript_i2bdm"]
+
+[node name="WeaponBase" type="Node2D"]
+script = SubResource("GDScript_i2bdm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+
+[node name="WeaponKillZone" parent="." instance=ExtResource("2_bx7nf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponKillZone"]
